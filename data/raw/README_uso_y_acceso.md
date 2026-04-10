@@ -8,19 +8,11 @@ Este repositorio no contiene microdatos de la ENUSC.
 
 Los datos utilizados en el estudio fueron obtenidos mediante solicitud de acceso
 
-al Instituto Nacional de Estadísticas (INE, Chile) y están sujetos a restricciones legales.
+al Instituto Nacional de Estadísticas (INE, Chile) y están sujetos a restricciones legales. Una guía oficial sobre divulgación se encuentra en: https://www.ine.gob.cl/docs/default-
+
+source/buenas-practicas/estandares/estandar/documento/guía-control-divulgación-estadística-microdatos.pdf
 
 
 
-Para replicar:
-
-1\. Solicite acceso a los datos al INE.
-
-2\. Guárdelos localmente en data/raw/ (no versionado).
-
-3\. Ejecute los scripts desde code/.
-
-
-
-Los datos no se distribuyen ni redistribuyen.
+La obtención vía solicitud de acceso a la información pública y posterior recurso de habeas data se encuentra debida documentada en el directorio "documentos\_cplt" de este repositorio.
 
