@@ -11,8 +11,6 @@ library(broom)
 library(patchwork)
 library(fixest)
 
-setwd("ruta a carpeta 'paper calles sin violencia' aqui")
-
 communes_plan <- read_excel("data/raw/communes_plan.xlsx", col_names= TRUE) %>% 
   select(all, `First Row`, `Second Row`, Province_Santiago) %>% 
   rename("CUT" = "all", "Tratado" = "First Row", "delete" = "Second Row", "Santiago" = "Province_Santiago") %>% 
@@ -281,7 +279,7 @@ ggsave("output/figura7.png", width = 9, height = 3, dpi = 300)
 
 did3_stats <- enusc_treated %>% group_by(Tratado, Post) %>% summarise(mean = mean(padb),                                                                    sd = sd(padb),
                                                                           n = n())
-write_xlsx(did3_stats, "did_stats_barrio.xlsx")
+write_xlsx(did3_stats, "output/did_stats_barrio.xlsx")
 
 did3 <- feols(padb ~ Post*Tratado*Mujeres | CUT +  año, enusc_treated)
 
@@ -315,7 +313,7 @@ ggsave("output/figura8.png", width = 9, height = 3, dpi = 300)
 #----Tablas 9-10. EH: Edad-----
 did_stats <- enusc_treated %>% group_by(Tratado, Post) %>% summarise(mean = mean(pad),                                                                 sd = sd(pad),
                                                                    n = n())
-write_xlsx(did_stats, "did_stats_pais.xlsx")
+write_xlsx(did_stats, "output/did_stats_pais.xlsx")
 
 did1 <- feols(pad ~ Tratado*Post*Edad | CUT + año, enusc_treated)
 
